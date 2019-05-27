@@ -1,0 +1,52 @@
+Dados:
+dkt = demanda (m3) do centro consumidor (bairro) k durante o período t;
+cjt = custo para manter ligada a bomba j durante todo o período t;
+scjt = custo para acionamento da bomba j no período t;
+vjt = vazão (m3) da bomba j no período t (varia de acordo com o tamanho do período);
+
+wjlt = vazão (m3) da bomba para transportar água do reservatório j para o reservatório l no
+período t (varia de acordo com o tamanho do período);
+hj min = volume (m3) mínimo do reservatório j;
+
+hj max = volume (m3) máximo do reservatório j;
+
+hj 0 = volume (m3) do reservatório j no início do horizonte de planejamento (t = 0);
+
+Sj = {k, tal que o centro consumidor k é abastecido pelo reservatório j};
+Rj = {l, tal que o reservatório l pode receber água do reservatório j};
+Pj = {l, tal que o reservatório l pode enviar água para o reservatório j};
+
+jlt = custo para transferir água do reservatório j para o reservatório l durante todo o perío-
+do t.
+
+jt = fração da água no reservatório j perdida por vazamento durante o período t;
+xj00 = estado inicial da bomba j (0 se a bomba estava desligada e 1 caso contrário);
+Variáveis de decisão:
+Ijt = volume de água (m3) no reservatório j, estocada ao final do período t;
+
+xjt = fração do período t em que a bomba j permanece ligada (o produto xjt pelo tamanho
+do período em horas, fornece o tempo que a bomba permaneceu ligada, em horas);
+yjt = 1, se xjt>0 (isto é, há captação de água no período t);
+0, caso contrário;
+jt = 1, se a bomba j é acionada no período t;
+0, caso contrário;
+
+
+Xjt <= Yjt , j = 1,...,R , t=1,...,t; (1)
+Ajt >= Yjt , -Xj, t-1 ,j = 1,...,R  , t=1,...,t; (2)
+
+No modelo proposto, a função objetivo (1) representa os custos com energia elétrica para
+
+funcionamento e acionamento das bombas hidráulicas de captação e de transferência. As res-
+trições (2) representam o balanceamento de estoque de água em cada um dos períodos para
+
+cada um dos reservatórios. As restrições (3) garantem que se xjt > 0, então yjt = 1. As restri-
+ções (4) asseguram que, caso a bomba j seja ligada durante todo o período t-1, ela poderá ser
+
+utilizada no período t sem o custo de acioná-la. As restrições (5) garantem que os volumes
+mínimos e máximos de água em cada um dos reservatórios sejam respeitados. As restrições
+(6) e (7) garantem que as bombas de captação e de transferência de água entre os reservatórios
+possam ser ligadas durante todo o período ou em parte dele. Nas restrições (8), os estados das
+bombas são ajustados para o desligado no início do horizonte de planejamento e o volume de
+água inicial nos reservatórios é atribuído. E as restrições (9) definem as variáveis yjt e jt como
+binárias.
