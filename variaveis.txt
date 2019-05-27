@@ -50,3 +50,7 @@ possam ser ligadas durante todo o período ou em parte dele. Nas restrições (8
 bombas são ajustados para o desligado no início do horizonte de planejamento e o volume de
 água inicial nos reservatórios é atribuído. E as restrições (9) definem as variáveis yjt e jt como
 binárias.
+
+
+
+
