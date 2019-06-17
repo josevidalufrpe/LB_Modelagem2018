@@ -12,6 +12,9 @@ def getPlanilhas():
     book10 = xlrd.open_workbook("panilhas/Vazão 12-18.xls")
     book11 = xlrd.open_workbook("panilhas/Vazão 01-19.xls")
     book12 = xlrd.open_workbook("panilhas/Vazão 02-19.xls")
-    book13 = xlrd.open_workbook("panilhas/Volume do RAP Prazeres.xls")
-    l=[book1,book2,book3,book4,book5,book6,book7,book8,book9,book10,book11,book12,book13]
+    l=[book1,book2,book3,book4,book5,book6,book7,book8,book9,book10,book11,book12]
+    return l
+def getPlanilhasCusto():
+    book1  = xlrd.open_workbook("panilha/Total e consumoKwh.xls")
+    l=[book1]
     return l
